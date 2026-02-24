@@ -36,3 +36,7 @@ jobs:
         format: json
         scan-ref: .
         exit-code: 0
+    - name: Gitleaks Installation
+      uses: gitleaks/gitleaks-action@v2
+    - name: gitleaks scan
+      run : gitleaks detect source . -r gitleaks-report.json -f json
