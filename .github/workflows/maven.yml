@@ -42,7 +42,7 @@ jobs:
       run : gitleaks detect source . -r gitleaks-report.json -f json
     - name: Copy reports to working-directory
       run: | 
-        cp -r trivy-report.json ./
+        cp -r trivy-report.json $GITHUB_WORKSPACE/.
 
   test:
     runs-on: ubuntu-latest
